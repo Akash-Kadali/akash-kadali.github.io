@@ -15,8 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;800&display=swap" rel="stylesheet" />
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-4+c1H+1S8p+gTW1xFiLPakObS1grjz0x1gDf4TRMZ9Kqz8Gy4RyqVAGz0n2hWzR1ae53FtEXVrAXucvdi6DZlw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
 
@@ -82,43 +81,20 @@
       display: flex; justify-content: center;
       padding: 1rem; z-index: 999; flex-wrap: wrap;
     }
-    /* Consistent Button Style */
-    nav a,
-    button,
-    .contact a {
-      background: var(--accent2); /* #00bfff */
-      color: white; /* 🔥 unified white text */
-      padding: 0.6rem 1.2rem;
-      margin: 0 0.4rem;
-      border-radius: 30px;
-      border: 2px solid var(--accent2);
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.3s ease;
-      display: inline-block;
+    nav a {
+      background: var(--accent2); color: var(--bg-color);
+      padding: 0.6rem 1.2rem; margin: 0 0.4rem;
+      border-radius: 30px; border: 2px solid var(--accent2);
+      font-family: 'Montserrat',sans-serif; font-weight:600;
+      text-decoration:none; transition:.2s;
     }
-
-    
-    /* Hover Effect: White Text */
-    nav a:hover,
-    button:hover,
-    .contact a:hover {
-      background: var(--accent); /* #1e90ff */
-      color: white;
-      border-color: var(--accent);
+    nav a:hover, nav a:focus {
+      background: var(--accent); color: var(--bg-color);
       transform: translateY(-2px);
     }
-
-
-
     nav a.active {
-      background: var(--accent); /* #1e90ff */
-      border-color: var(--accent);
-      color: white;
+      background: var(--accent); border-color: var(--accent);
     }
-
-
 
     /* Header */
     header {
@@ -178,43 +154,19 @@
     }
 
     /* Footer & Contact */
-    .contact-icons {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 2rem;
+    .contact {
+      display:flex; justify-content:center; gap:1rem;
+      flex-wrap:wrap; margin-top:1rem;
     }
-    
-    .contact-icons a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 60px;
-      height: 60px;
-      font-size: 2rem;
-      color: white;
-      background: rgba(0, 191, 255, 0.1); /* transparent blue */
-      border: 2px solid var(--accent2); /* neon border */
-      border-radius: 50%;
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
-      transition: all 0.3s ease;
-      backdrop-filter: blur(8px);
-      text-decoration: none;
+    .contact a img {
+      transition:.3s; height:50px;
     }
-    
-    .contact-icons a:hover {
-      background: var(--accent2);
-      color: #ffffff;
-      transform: scale(1.15);
-      box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
+    .contact a:hover img { transform: scale(1.1); }
+    footer {
+      text-align:center; padding:1rem;
+      backdrop-filter: blur(15px); background:rgba(10,31,68,0.3);
+      border-top:1px solid #133057; font-family:'Montserrat',sans-serif;
     }
-    
-    .contact-icons i {
-      font-size: 1.8rem;
-      color: white;
-    }
-
-
 
     /* Responsive */
     @media (max-width:768px) {
@@ -226,7 +178,7 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to content</a>
   <nav role="navigation" aria-label="Main navigation">
-    <a href="#about">About</a>
+    <a href="#about" class="active">About</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
@@ -418,16 +370,15 @@
 
     <section id="contact" aria-labelledby="contact-heading" data-aos="fade-up">
       <h2 id="contact-heading">🌐 Contact</h2>
-      <div class="contact-icons">
-        <a href="https://linkedin.com/in/sri-akash-kadali" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
+      <div class="contact">
+        <a href="https://linkedin.com/in/sri-akash-kadali" target="_blank" rel="noopener" aria-label="Visit my LinkedIn profile">
+          <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn icon">
         </a>
-        <a href="mailto:srikadaliakash@gmail.com" aria-label="Email">
-          <i class="fas fa-envelope"></i>
+        <a href="mailto:srikadaliakash@gmail.com" aria-label="Send me an email">
+          <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail icon">
         </a>
       </div>
     </section>
-
   </main>
 
   <footer role="contentinfo">
